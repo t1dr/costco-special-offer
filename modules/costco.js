@@ -2,7 +2,7 @@ import URLS from './urls.js';
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 
-async function findSpecialOfferCode() {
+async function findSpecialOfferCode(onetime = false) {
   const url = URLS.COSTCO_SEARCH_RESULT_PAGE;
   try {
     const response = await fetch(url);
@@ -23,7 +23,7 @@ async function findSpecialOfferCode() {
   }
 }
 
-export async function makeCostcoSpecialOfferMessage() {
+export async function makeCostcoSpecialOfferMessage(onetime = false) {
   const code = await findSpecialOfferCode();
   const url = URLS.COSTCO_SPECIAL_OFFER_WITH_CODE(code);
   const headers = {
@@ -38,7 +38,7 @@ export async function makeCostcoSpecialOfferMessage() {
     let messageContent = `🗓️ ${formatDate(new Date)} 🎁 코스트코 스페셜 할인 도착! 🎁\n`;
 
     // only for under 100,000KRW, new products
-    const products = data.products.filter(p => p.price.value < 100000 && !isToday(new Date(p.discountStartDate)));
+    const products = data.products.filter(p => p.price.value < 100000 && (!isToday(new Date(p.discountStartDate) || onetime)));
 
     const messageQueue = [];
     for (let i = 0; i < products.length; i++) {

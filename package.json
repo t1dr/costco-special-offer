@@ -9,7 +9,8 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "node main.js",
+    "start": "node main.js -- cron",
+    "start:onetime": "node main.js -- onetime",
     "pm2": "pm2 start yarn --name costco-special-offer -- start"
   },
   "author": "Jaeyong",
