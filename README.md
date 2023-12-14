@@ -16,7 +16,12 @@ PUBLIC_KEY=
 CHANNEL_ID=
 ```
 
-## Start
+## Add cron
 ```
 yarn pm2
+```
+
+## Run onetime (for every products. not only today's.)
+```
+yarn start:onetime
 ```
