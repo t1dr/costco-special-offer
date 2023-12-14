@@ -1,6 +1,6 @@
 import * as cron from 'node-cron';
-import { makeCostcoSpecialOfferMessage } from './costco.js'
-import { sendHotDeal } from './discord.js'
+import { makeCostcoSpecialOfferMessage } from './modules/costco.js'
+import { sendHotDeal } from './modules/discord.js'
 
 // run everyday at 3 p.m
 cron.schedule('* * * * * *', async () => {

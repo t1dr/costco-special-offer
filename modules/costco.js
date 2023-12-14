@@ -1,4 +1,4 @@
-import URLS from "./urls.js";
+import URLS from './urls.js';
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 
