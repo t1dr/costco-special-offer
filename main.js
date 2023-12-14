@@ -3,8 +3,8 @@ import { makeCostcoSpecialOfferMessage } from './modules/costco.js'
 import { sendHotDeal } from './modules/discord.js'
 
 // run everyday at 3 p.m
-cron.schedule('* * * * * *', async () => {
-  main();
+cron.schedule('0 15 * * *', async () => {
+  await main();
 });
 
 async function main () {
