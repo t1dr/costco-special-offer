@@ -38,8 +38,8 @@ export async function makeCostcoSpecialOfferMessage(onetime = false) {
     let messageContent = `🗓️ ${formatDate(new Date)} 🎁 코스트코 스페셜 할인 도착! 🎁\n`;
 
     // only for under 100,000KRW, new products
-    const products = data.products.filter(p => p.price.value < 100000 && (!isToday(new Date(p.discountStartDate) || onetime)));
-
+    const products = data.products.filter(p => p.price.value < 100000 && (isToday(new Date(p.discountStartDate) || onetime)));
+    
     const messageQueue = [];
     for (let i = 0; i < products.length; i++) {
       const startDate = formatDate(new Date(data.products[i].discountStartDate));
