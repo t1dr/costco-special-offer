@@ -5,9 +5,6 @@
   "description": "A simple Discord bot for Costco special offer notifications",
   "main": "costco.ts",
   "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "start": "node main.js -- cron",
     "start:onetime": "node main.js -- onetime",
