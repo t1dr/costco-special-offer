@@ -10,6 +10,8 @@ if (mode == 'cron') {
     await main();
   });
 } else if (mode == 'onetime') {
+  await main();
+} else if (mode == 'onetime:all') {
   await main(true);
 }
 

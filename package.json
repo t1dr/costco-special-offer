@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node main.js -- cron",
     "start:onetime": "node main.js -- onetime",
+    "start:onetime:all": "node main.js -- onetime:all",
     "pm2": "pm2 start yarn --name costco-special-offer -- start"
   },
   "author": "Jaeyong",
