@@ -2,6 +2,8 @@ import URLS from './urls.js'
 import Config from './config.js';
 
 export async function sendHotDeal(messageQueue) {
+  if (!messageQueue) return;
+  
   const mainChannelID = Config.channelID;
   let firstMessageID, threadChannelID;
 

@@ -15,7 +15,7 @@ if (mode == 'cron') {
   await main(true);
 }
 
-async function main (onetime = false) {
-  const messageQueue = await makeCostcoSpecialOfferMessage(onetime);
+async function main (onetimeall = false) {
+  const messageQueue = await makeCostcoSpecialOfferMessage(onetimeall);
   await sendHotDeal(messageQueue);
 }
